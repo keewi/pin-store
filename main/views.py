@@ -16,7 +16,7 @@ def index(request):
         stripe.PaymentIntent.confirm(request.POST.get('client_secret'), payment_method="pm_card_visa")
         return HttpResponse("hey")
     intent = stripe.PaymentIntent.create(
-        amount=1099,
+        amount=1200,
         currency='usd',
         metadata={'integration_check': 'accept_a_payment'},
         payment_method_types=["card"]
